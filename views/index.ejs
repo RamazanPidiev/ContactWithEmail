@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactForm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section>
+        <h3 class="hidden">Contact</h3>
+        <form class="contact" action="/send" method="post">
+
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Your name.." required><br>
+
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder="Your email.."
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
+
+            <label for="message"></label><br>
+            <textarea id="message" name="message" placeholder="Your message.." required></textarea>
+
+            <button type="submit">Submit</button>
+
+            <% if(locals.message) { %>
+                <p>
+                    <%= message %>
+                </p>
+            <%}%>
+        </form>
+    </section>
+</body>
+
+</html>
